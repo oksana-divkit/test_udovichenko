@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  max-width: 1632px;
+  padding: 0 8px 20px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.wrapper h1 {
+  flex: 0;
+  font-size: 32px;
+}
+
+.map-app {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.map-app__sidebar {
+  flex: 0 0 33%;
+  margin: 0 40px 0 0;
+  padding: 0 18px 0 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.map-app__map {
+  /* height: 80vh; */
+  flex: 1;
+}
+
+.cities-list {
+
+}
+
+.cities-list__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 596px; */
+  height: 212px;
+  /* margin: 0 0 178px; */
+  margin: 0 0 30px;
+  text-align: center;
+  background: #C4C4C4;
+  cursor: pointer;
+  transition: all ease-in-out .15s;
+}
+
+.cities-list__item:hover {
+  background: #b0cfe6;
+}
+
+.cities-list__title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.1;
+  color: #000000;
+}
+
+.cities-list__item.loading:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .7;
+  color: #fff;
+  background: #000;
+}
+
+.cities-list__item.loading:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
