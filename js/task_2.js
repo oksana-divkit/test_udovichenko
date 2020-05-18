@@ -48,7 +48,7 @@ function initMap() {
     infoWindow.setContent('...Loading');
     infoWindow.open(map);
 
-    const url='https://api.geonames.org/countryCodeJSON?lat=' + e.latLng.lat() + '&lng=' + e.latLng.lng() +'&username=ks_rew';
+    const url='https://secure.geonames.org/countryCodeJSON?lat=' + e.latLng.lat() + '&lng=' + e.latLng.lng() +'&username=ks_rew';
 
     axios.get(url)
       .then(function(res) {
@@ -78,7 +78,7 @@ function handleClickCity() {
 
     infoWindow.close();
 
-    const url='https://api.geonames.org/searchJSON?q=' + cityName + '&maxRows=1&lang=en&username=ks_rew&style=full';
+    const url='https://secure.geonames.org/searchJSON?q=' + cityName + '&maxRows=1&lang=en&username=ks_rew&style=full';
 
     axios.get(url)
       .then(function(res) {
